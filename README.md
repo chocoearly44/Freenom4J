@@ -23,19 +23,15 @@ Please refer to the [Wiki section][wiki-url].
 Replace VERSION with the latest version from [releases][releases-url].
 
 ### Maven
-1. [Authenticate with GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages)
-
-2. Add repository
+1. Add repository
 ```xml
 <repository>
-  <url>https://maven.pkg.github.com/chocoearly44/freenom4j</url>
-  <snapshots>
-    <enabled>true</enabled>
-  </snapshots>
+  <id>repsy</id>
+  <url>https://repo.repsy.io/mvn/chocoearly44/maven</url>
 </repository>
 ```
 
-3. Add dependency
+2. Add dependency
 ```xml
 <dependency>
   <groupId>tk.thesuperlab</groupId>
@@ -45,22 +41,16 @@ Replace VERSION with the latest version from [releases][releases-url].
 ```
 
 ### Gradle
-1. [Authenticate with GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages)
-
-2. Add repository
+1. Add repository
 ```groovy
 repositories {
   maven {
-    url = uri("https://maven.pkg.github.com/chocoearly44/freenom4j")
-    credentials {
-      username = System.getenv("USERNAME")
-      password = System.getenv("TOKEN")
-    }
+    url "https://repo.repsy.io/mvn/chocoearly44/maven"
   }
 }
 ```
 
-3. Add dependency
+2. Add dependency
 ```groovy
 dependencies {
   implementation 'tk.thesuperlab:freenom4j:VERSION'

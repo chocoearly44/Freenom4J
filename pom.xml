@@ -7,19 +7,41 @@
 	<groupId>tk.thesuperlab</groupId>
 	<artifactId>freenom4j</artifactId>
 	<version>1.0</version>
+
 	<name>Freenom4J</name>
+	<description> Freenom API wrapper for JVM languages.</description>
+	<url>https://github.com/chocoearly44/Freenom4J</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://github.com/chocoearly44/Freenom4J/blob/master/LICENSE</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>chocoearly44</name>
+			<email>chocoearly44@proton.me</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/chocoearly44/Freenom4J.git</connection>
+		<developerConnection>scm:git:ssh://github.com:chocoearly44/Freenom4J.git</developerConnection>
+		<url>https://github.com/chocoearly44/Freenom4J/tree/master</url>
+	</scm>
 
 	<properties>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>GitHub chocoearly44 Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/chocoearly44/freenom4j</url>
+			<id>repsy</id>
+			<name>chocoearly44 Maven</name>
+			<url>https://repo.repsy.io/mvn/chocoearly44/maven</url>
 		</repository>
 	</distributionManagement>
 
@@ -50,4 +72,39 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
